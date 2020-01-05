@@ -1,5 +1,6 @@
 const { override, fixBabelImports, addLessLoader, addWebpackPlugin } = require('customize-cra')
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
+const path = require('path')
 
 module.exports = override(
   fixBabelImports('import', {
@@ -9,7 +10,14 @@ module.exports = override(
   }),
   addLessLoader({
     javascriptEnabled: true,
-    modifyVars: { '@primary-color': '#1DA57A' }
+    modifyVars: { '@primary-color': '#61dafb' }
   }),
   addWebpackPlugin(new AntdDayjsWebpackPlugin()),
+  // used to minimise bundle size by 500KB
+  function(config, env) {
+    const alias = config.resolve.alias || {};
+    alias['@ant-design/icons/lib/dist$'] = path.resolve(__dirname, './src/icons.js');
+    config.resolve.alias = alias;
+    return config;
+  }
 )
