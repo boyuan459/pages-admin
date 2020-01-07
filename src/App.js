@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Provider } from 'react-redux'
 
-import { store, history } from 'redux/store'
+import { store } from 'redux/store'
 import { theme, GlobalStyles } from 'styles/globalStyles'
 import AppRouter from './AppRouter' 
 
