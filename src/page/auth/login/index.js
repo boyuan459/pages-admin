@@ -1,14 +1,28 @@
-import React, { Component } from 'react'
-import { Form, Icon, Input, Button, Checkbox } from 'antd'
-import { Wrapper } from './styles'
+import React, { useCallback } from 'react'
+import { Form, Input, Button } from 'antd'
+import { connect } from 'react-redux'
+
+import * as actions from 'redux/auth/action'
+import { Wrapper, Title } from './styles'
 
 const FormItem = Form.Item
 
 function Login (props) {
-  const { getFieldDecorator } = props.form;
+  const { login, form } = props
+  const { getFieldDecorator, validateFields } = form;
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault()
+    validateFields((err, values) => {
+      if (!err) {
+        login(values)
+      }
+    })
+    console.log('submit')
+  }, [])
   return (
     <Wrapper>
-      <Form>
+      <Form onSubmit={handleSubmit}>
+        <Title>Pages CMS</Title>
         <FormItem>
           {getFieldDecorator("username", {
             rules: [{ required: true, message: "Please enter your username!" }]
@@ -20,7 +34,7 @@ function Login (props) {
           })(<Input type="password" placeholder="Password" />)}
         </FormItem>
         <FormItem>
-          <Button>Log in</Button>
+          <Button type="primary" htmlType="submit">Log in</Button>
         </FormItem>
       </Form>
     </Wrapper>
@@ -29,4 +43,18 @@ function Login (props) {
 
 const LoginWrapper = Form.create({ name: 'login' })(Login)
 
-export default LoginWrapper
+const mapStateToProps = (state) => {
+  return {
+    auth: state.Auth
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login (user) {
+      dispatch (actions.login(user))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginWrapper)
