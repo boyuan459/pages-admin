@@ -1,7 +1,7 @@
 import * as actions from './action'
 
 const initState = {
-  user: null,
+  user: {},
 }
 
 export default function authReducer (state = initState, action) {

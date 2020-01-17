@@ -10,14 +10,13 @@ const FormItem = Form.Item
 function Login (props) {
   const { login, form } = props
   const { getFieldDecorator, validateFields } = form;
-  const handleSubmit = useCallback((e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault()
     validateFields((err, values) => {
       if (!err) {
         login(values)
       }
     })
-    console.log('submit')
   }, [])
   return (
     <Wrapper>
