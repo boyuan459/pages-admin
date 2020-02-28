@@ -40,8 +40,6 @@ function Login (props) {
   )
 }
 
-const LoginWrapper = Form.create({ name: 'login' })(Login)
-
 const mapStateToProps = (state) => {
   return {
     auth: state.Auth
@@ -56,4 +54,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginWrapper)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

@@ -9,7 +9,7 @@ const AppRouter = () =>(
   <Router>
     <Switch>
       <Route path="/login" component={Login} />
-      <Route path="/" component={requireAuth(App)} />
+      <Route path="/" component={App} />
     </Switch>
   </Router>
 )
