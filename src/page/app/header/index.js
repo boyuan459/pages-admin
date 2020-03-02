@@ -6,27 +6,32 @@ import get from 'lodash/get'
 import map from 'lodash/map'
 import { Grid } from 'react-styled-flexboxgrid'
 
-import { Wrapper, Logo, Links, Li, Box } from './styles'
+import Box from 'component/Box'
+
+import { Wrapper, Logo, Links, Login } from './styles'
 
 class Header extends Component {
   render () {
     const { sections, affix } = this.props
     const links = map(sections, (section, i) => {
       return (
-        <Li className="link" key={i}>
-          <Link activeClass="active" to={kebabCase(get(section, 'title', ''))} spy smooth duration={500}>
+        <li className="link" key={i}>
+          <Link activeClass="active" to={kebabCase(get(section, 'title', ''))} spy smooth duration={500} offset={-75}>
             <span>{section.title}</span>
           </Link>
-        </Li>
+        </li>
       )
     })
     const navbar = (
-      <Box>
-        <Logo>Hubis</Logo>
+      <Box justify="space-between">
+        <Logo><span>Hubis</span></Logo>
         <Links>
           {links}
         </Links>
-        <Button type="primary">FREE TRAIL </Button>
+        <Box>
+          <Button type="primary">FREE TRAIL </Button>
+          <Login type="primary">Login</Login>
+        </Box>
       </Box>
     )
     return (
