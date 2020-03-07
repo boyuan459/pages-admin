@@ -4,7 +4,7 @@ const colors = {
   brandPurple: '#6156BD',
   brandOrange: '#FFAF14',
   brandGothic: '#688288',
-  brandBlue: '#00B4C4',
+  brandBlue: '#4fd2c2',
 
   colorAthensGrey: '#FBFBFC',
   colorAlabaster: '#F7F7F7',

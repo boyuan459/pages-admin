@@ -59,6 +59,7 @@ export const Wrapper = styled.div`
   padding: 20px 0;
   box-shadow: 0 0 3px ${props => props.theme.gray};
   background-color: ${props => props.theme.white};
+  transition: height ease 1s;
 
   .ant-affix {
     display: block;

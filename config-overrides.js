@@ -10,7 +10,7 @@ module.exports = override(
   }),
   addLessLoader({
     javascriptEnabled: true,
-    modifyVars: { '@primary-color': '#00B4C4' }
+    modifyVars: { '@primary-color': '#4fd2c2' }
   }),
   addWebpackPlugin(new AntdDayjsWebpackPlugin()),
   // used to minimise bundle size by 500KB, no need after antd v4

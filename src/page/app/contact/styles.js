@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
+import Box from 'component/Box'
+
 export const Wrapper = styled.div`
-  code {
-    display: block;
-    white-space: pre-wrap;
+  h2, h3, .ant-typography, label {
+    color: ${props => props.theme.white};
   }
 `
 
