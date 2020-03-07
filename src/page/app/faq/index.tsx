@@ -10,9 +10,14 @@ const FAQ = () => {
     <Wrapper>
       <H2>FAQ</H2>
       <Typography>
-        <Title>How it works</Title>
+        <Title level={3}>How it works</Title>
         <Paragraph>
           Hubis chat application is based on web, you only need to put following code into your site, then it should work smoothly.
+          <pre><code>&lt;script id="hubis-chat-app" src="https://hubis.com/dist/bundle.js?key=API_KEY" /&gt;</code></pre>
+        </Paragraph>
+        <Title level={3}>What happen if trial expired</Title>
+        <Paragraph>
+          We provide 90 days of free trial, you can continue with your subscription with 10 USD per month if you happy with our application.
         </Paragraph>
       </Typography>
     </Wrapper>

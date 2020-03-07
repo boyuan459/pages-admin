@@ -49,7 +49,7 @@ const colors = {
   colorVimeo: '#1ab7ea',
 }
 
-module.exports = Object.assign(colors, {
+export default Object.assign(colors, {
   brandPrimary: colors.brandBlue,
 
   blue: colors.brandBlue,

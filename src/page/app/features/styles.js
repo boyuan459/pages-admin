@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { RiseOutlined, CheckCircleOutlined, ChromeOutlined } from '@ant-design/icons'
 
 import Box from 'component/Box'
+import { media } from 'styles/media'
 
 export const H2 = styled.h2`
   margin: 30px 0;
@@ -14,6 +15,9 @@ export const FeatureWrapper = styled(Box)`
   padding: 40px 20px;
   border-radius: 5px;
   background-color: ${props => props.theme.grayLight};
+  ${media.phone`
+    margin-bottom: 10px;
+  `}
 `
 
 export const Title = styled.h3`
