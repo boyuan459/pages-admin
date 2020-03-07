@@ -60,16 +60,6 @@ export const Wrapper = styled.div`
   box-shadow: 0 0 3px ${props => props.theme.gray};
   background-color: ${props => props.theme.white};
   transition: height ease 1s;
-
-  .ant-affix {
-    display: block;
-    background-color: ${props => props.theme.white};
-    height: 75px !important;
-    ${NavbarWrapper} {
-      height: 75px;
-      justify-content: center;
-    }
-  }
 `
 
 export const Login = styled(Button)`

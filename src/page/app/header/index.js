@@ -46,12 +46,12 @@ const Header = (props) => {
     
   )
   return (
-    affix ? navbar
-    : (
+    affix ?
+    (
       <Affix>
         {navbar}
       </Affix>
-    )
+    ) : navbar
   )
 }
 

@@ -22,7 +22,7 @@ const App = props => {
   ]
   return (
     <>
-      <Header sections={sections} />
+      <Header affix sections={sections} />
       <ScrollElements sections={sections}>
         <Block grey>
           <Home />
